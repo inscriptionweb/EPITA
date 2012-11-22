@@ -1,0 +1,26 @@
+1/
+
+let min2 a b = 
+	if a<b then
+		"a est le mininum"
+		else "b est le minimum" ;;
+		
+let max2 a b = 
+	if a>b then
+		"a est le maximum"
+		else "b est le maximum" ;;
+		
+2/
+
+let ordre2 a b =  
+	if a<b 
+		then int_of_string "a^b" 
+			else 
+		int_of_string "b^a" ;;
+		
+3/
+
+let min3 a b c = 
+	if a<b && a<c then "a est le minimum"
+		else
+	if b<c && b<a

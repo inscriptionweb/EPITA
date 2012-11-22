@@ -1,0 +1,81 @@
+1/
+
+let t_economique p = match p with
+	p when p <= 500 -> 3.4
+   |p when p <= 1000 -> 4.6
+   |p when p <= 2000 -> 5.1
+   |_ -> 6.9;;
+   
+2/
+
+
+
+3/
+			
+let tarif t p = let t = string_of_int t in
+	if t = "économique" then 
+		if p <= 500  then 3.4
+			else
+		if p <= 1000 then 4.6
+			else
+		if p <= 2000 then 5.1
+			else
+		if p <= 3000 then 6.9
+			else failwith "poids trop élevé"
+	else
+	if t = "rapide" then
+		if p <= 500  then 4.6
+			else
+		if p <= 1000 then 5.9
+			else
+		if p <= 2000 then 6.5
+			else
+		if p <= 3000 then 7.2
+			else failwith "poids trop élevé"
+	else
+	if t = "express" then
+		if p <= 500  then 9.1
+			else
+		if p <= 1000 then 11.
+			else
+		if p <= 2000 then 13.5
+			else
+		if p <= 3000 then 14.2
+			else failwith "poids trop élevé"
+	else failwith "veuillez prendre un type d'envois économique, rapide ou express" ;;
+	
+	OU
+	
+let tarif t p =
+	if t = 1 then 
+		if p <= 500  then 3.4
+			else
+		if p <= 1000 then 4.6
+			else
+		if p <= 2000 then 5.1
+			else
+		if p <= 3000 then 6.9
+			else failwith "poids trop élevé"
+	else
+	if t = 2 then
+		if p <= 500  then 4.6
+			else
+		if p <= 1000 then 5.9
+			else
+		if p <= 2000 then 6.5
+			else
+		if p <= 3000 then 7.2
+			else failwith "poids trop élevé"
+	else
+	if t = 3 then
+		if p <= 500  then 9.1
+			else
+		if p <= 1000 then 11.
+			else
+		if p <= 2000 then 13.5
+			else
+		if p <= 3000 then 14.2
+			else failwith "poids trop élevé"
+	else failwith "veuillez prendre un type d'envois 1 : économique, 2 : rapide ou 3 : express" ;;
+			
+			

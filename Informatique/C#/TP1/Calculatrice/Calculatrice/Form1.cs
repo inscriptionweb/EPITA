@@ -11,139 +11,90 @@ namespace Calculatrice
 {
     public partial class Form1 : Form
     {
+        Fonctions fonction;
+
+        float label_stock_nb;
+
         public Form1()
         {
             InitializeComponent();
-            Console.WriteLine(my_pow(5, 2));
-        }
+            fonction = new Fonctions();
 
-
-        /*3.1 : Approx*/
-        float approx(float a, int b)
-        {
-            int mult = 10; /* Je définis un multiplicateur = 10*/
-            int x; /* J'instancie un entier qui va me permettre de prendre a avec le nombre de valeurs décimales voulues, afin de supprimer celles après*/
-            for (int i = 1; i < b; i++) /* Je fais une boucle*/
-                    mult = mult * 10;
-
-            a = mult * a;
-            x = (int)a;
-            a = (float)x;
-            a = a / mult;
-            return a;
-        }
-
-
-
-        /*3.2 : Sqrt*/
-        float my_sqrt(float a)
-        {
-
-
-            return a;
-        }
-
-
-
-
-        /*3.3 : Pow*/            
-        float my_pow(float a, int b)
-        {
-            /* 2 manières de faire la fonction pow ici. 
-             * La première récursive (selon moi elle l'est)
-             * La seconde avec une boucle (récursive aussi selon moi)
-             */
-
-
-            int i = 1;
-            float c = a;
-
-            if (i < b)
-                a = a * c;
-
-            if (c == b)
-            i = i + 1;
-            return (a);
-
-            /*
-            float c = a;
-            for (int i = 1; i < b; i++)
-                a = a * c;
-            return a;*/
-        }
-
-
-
-
-        /*3.4 : SexyPrime*/
-        bool is_sexy(int a, int b)
-        {
-
-            
-            return true;
-        }
-
-
-
-
-        /*3.5 : Factorielle*/
-        int facto(int a)
-        {
-
-
-            return a;
-        }
-
-
-
-
-        /*3.6 : Degrés et Radians*/
-        float deg_to_rad(float a)
-        {
-
-
-            return a;
-        }
-
-        float rad_to_deg(float a)
-        {
-
-
-            return a;
-        }
-
-
-
-
-        /*3.7 : Trigo*/
-        float my_cos(float a)
-        
-        {
-
-
-            return a;
-        }
-
-
-        float my_sin(float a)
-        
-        {
-
-
-            return a;
-        }
-
-
-        float my_tan(float a)
-        {
-
-
-            return a;
+            Console.WriteLine(fonction.is_sexy(17, 11));
+            Console.WriteLine(fonction.my_pow(2, 4));
+            Console.WriteLine(fonction.rad_to_deg(3.14159f));
+            Console.ReadLine();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(2);
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(3);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(4);
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(5);
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(6);
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(7);
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(8);
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            affiche_labelstock(9);
+
+        }
+
+
+
+
+        public void affiche_labelstock(int nombre)
+        {
+            label_stock_nb =label_stock_nb*10 + nombre;
+            label_stock.Text = label_stock_nb.ToString();
+
+        }
+
+
+
     }
 }

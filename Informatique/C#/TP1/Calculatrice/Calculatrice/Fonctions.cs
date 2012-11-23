@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TP1_CSharp
+namespace Calculatrice
 {
-    class Program
+    class Fonctions
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine(is_sexy(11, 17));
-            Console.WriteLine(my_pow(2, 4));
-            Console.ReadLine();
-        }
         /*3.1 : Approx*/
-        public static float approx(float a, int b)
+        public float approx(float a, int b)
         {
             int mult = 10; /* Je définis un multiplicateur = 10*/
             int x; /* J'instancie un entier qui va me permettre de prendre a avec le nombre de valeurs décimales voulues, afin de supprimer celles après*/
@@ -31,7 +25,7 @@ namespace TP1_CSharp
 
 
         /*3.2 : Sqrt*/
-        public static float my_sqrt(float a)
+        public float my_sqrt(float a)
         {
 
 
@@ -42,7 +36,7 @@ namespace TP1_CSharp
 
 
         /*3.3 : Pow*/
-        public static float my_pow(float a, int b)
+        public float my_pow(float a, int b)
         {
             /* 2 manières de faire la fonction pow ici. 
              * La première récursive (selon moi elle l'est)
@@ -57,13 +51,13 @@ namespace TP1_CSharp
                 a = a * c;
             return a;*/
         }
-        public static float pow_aux(float a, int b, float c)
+        public float pow_aux(float a, int b, float c)
         {
             int i = 1;
             if (i < b)
                 a = a * c;
             if (i == b)
-            return (a);
+                return (a);
             return (pow_aux(a, b - 1, c));
         }
 
@@ -72,7 +66,7 @@ namespace TP1_CSharp
 
         /*3.4 : SexyPrime*/
         /*www.haypocalc.com/wiki/Algorithmes_pour_nombres_premiers*/
-        public static bool a_premier(int a)
+        public bool a_premier(int a)
         {
             if (a < 2)
                 return false;
@@ -89,7 +83,7 @@ namespace TP1_CSharp
             return true;
 
         }
-        public static bool b_premier(int b)
+        public bool b_premier(int b)
         {
             if (b < 2)
                 return false;
@@ -97,21 +91,24 @@ namespace TP1_CSharp
                 return true;
             else if ((b % 2) == 0)
                 return false;
-                for (int i = 3; i * i <= b; i += 2)
-                {
-                    if ((b % i) == 0)
-                        return false;
+            for (int i = 3; i * i <= b; i += 2)
+            {
+                if ((b % i) == 0)
+                    return false;
             }
             return true;
 
         }
 
-        public static bool is_sexy(int a, int b)
+        public bool is_sexy(int a, int b)
         {
+            if (a >= 1000 || b >= 1000)
+                return false;
             if (a_premier(a) && b_premier(b))
                 if (a - b != 6)
                     return false;
                 else return true;
+            else return false;
 
 
             /*if (a < 2 || b < 2)
@@ -142,7 +139,7 @@ namespace TP1_CSharp
 
 
         /*3.5 : Factorielle*/
-        public static int facto(int a)
+        public int facto(int a)
         {
             int x = a;
             for (int i = 0; i < x; i++)
@@ -158,17 +155,18 @@ namespace TP1_CSharp
 
 
         /*3.6 : Degrés et Radians*/
-        public static float deg_to_rad(float a)
+        public float deg_to_rad(float a)
         {
-
+            float pi = 3.14159265F;
+            a = pi * a / 180;
 
             return a;
         }
 
-        public static float rad_to_deg(float a)
+        public float rad_to_deg(float a)
         {
-
-
+            float pi = 3.14159265F;
+            a = 180 * a / pi;
             return a;
         }
 
@@ -176,7 +174,7 @@ namespace TP1_CSharp
 
 
         /*3.7 : Trigo*/
-        public static float my_cos(float a)
+        public float my_cos(float a)
         {
 
 
@@ -184,7 +182,7 @@ namespace TP1_CSharp
         }
 
 
-        public static float my_sin(float a)
+        public float my_sin(float a)
         {
 
 
@@ -192,7 +190,7 @@ namespace TP1_CSharp
         }
 
 
-        public static float my_tan(float a)
+        public float my_tan(float a)
         {
 
 

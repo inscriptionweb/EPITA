@@ -172,8 +172,8 @@ namespace Calculatrice
                     result = fonction.my_sqrt(number);
                 else if (operateur == "^")
                     result = fonction.my_pow2(memory_nb, (int)number);
-                //  else if (operateur == "sexy")
-                //    result = fonction.is_sexy((int)memory_nb, (int)number);
+               // else if (operateur == "sexy")
+                  //result = fonction.is_sexy((int)memory_nb, (int)number);
                 else if (operateur == "!")
                     result = fonction.facto((int)memory_nb);
                 else if (operateur == "cos")

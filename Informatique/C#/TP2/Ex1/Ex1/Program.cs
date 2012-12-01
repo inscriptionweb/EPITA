@@ -7,9 +7,16 @@ namespace Ex1
 {
     class Program
     {
+        static bool IsInt(string args)
+        {
+            int test;
+            return int.TryParse(args, out test);
+        }
+
+
         static void Main(string[] args)
         {
-            int n =Int32.Parse(args[0]);
+            int n = Int32.Parse(args[0]);
 
             for (int i = 1; i < args.Length; i += 2)
             {
@@ -29,6 +36,11 @@ namespace Ex1
                 {
                     n -= Int32.Parse(args[i+1]);
                 }
+                if (IsInt(args[i]) == false)
+                {
+                    Console.WriteLine("Vous devez entrer des ints");
+                }
+
             }
 
             Console.WriteLine(n);
